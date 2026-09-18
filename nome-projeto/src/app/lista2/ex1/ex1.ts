@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  imports: [],
   selector: 'app-ex1',
-  styleUrl: './ex1.css',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './ex1.html',
+  styleUrls: ['./ex1.css']
 })
-export class Ex1 {
-
+export class Ex1Component {
   mensagemVisivel: boolean = false;
 
   alternarMensagem(): void {

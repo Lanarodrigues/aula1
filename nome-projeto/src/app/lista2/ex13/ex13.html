@@ -1,0 +1,36 @@
+<!-- Resumo de totais -->
+<div class="resumo" *ngIf="tarefas.length > 0">
+  <span>Total: {{ totalTarefas }}</span>
+  <span>Concluídas: {{ totalConcluidas }}</span>
+  <span>Pendentes: {{ totalPendentes }}</span>
+</div>
+
+<!-- Listagem das tarefas -->
+<ul class="lista-tarefas" *ngIf="tarefas.length > 0">
+  <li *ngFor="let tarefa of tarefas" 
+      class="item-tarefa" 
+      [class.baixa]="tarefa.prioridade === 'baixa'"
+      [class.média]="tarefa.prioridade === 'média'"
+      [class.alta]="tarefa.prioridade === 'alta'"
+      [class.concluida]="tarefa.concluida">
+    
+    <div>
+      <div class="titulo-tarefa">
+        <strong>{{ tarefa.titulo }}</strong>
+      </div>
+      <small>Responsável: {{ tarefa.responsavel }} | Prioridade: {{ tarefa.prioridade }}</small>
+    </div>
+
+    <button class="btn-status" 
+            [class.concluido]="tarefa.concluida"
+            [class.pendente]="!tarefa.concluida"
+            (click)="alternarSituacao(tarefa)">
+      {{ tarefa.concluida ? 'Concluída' : 'Pendente' }}
+    </button>
+  </li>
+</ul>
+
+<!-- Mensagem quando não existem tarefas -->
+<p class="sem-tarefas" *ngIf="tarefas.length === 0">
+  Nenhuma tarefa cadastrada no momento.
+</p>

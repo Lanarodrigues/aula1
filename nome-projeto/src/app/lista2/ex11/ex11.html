@@ -1,0 +1,16 @@
+<div class="filtros">
+  <label>
+    <input type="checkbox" [checked]="somenteDisponiveis" (change)="somenteDisponiveis = !somenteDisponiveis">
+    Exibir apenas produtos com estoque
+  </label>
+</div>
+
+<ul>
+  <ng-container *ngFor="let prod of produtos">
+    <li *ngIf="!somenteDisponiveis || prod.quantidade > 0" [class.sem-estoque]="prod.quantidade === 0">
+      <strong>{{ prod.nome }}</strong> - 
+      Preço: {{ prod.preco | currency:'BRL' }} | 
+      Qtd em estoque: {{ prod.quantidade }}
+    </li>
+  </ng-container>
+</ul>

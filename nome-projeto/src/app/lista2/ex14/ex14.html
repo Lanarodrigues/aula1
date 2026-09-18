@@ -1,0 +1,47 @@
+
+<div class="card-ex14">
+  @if (usuarioLogado) {
+    <p>Bem-vindo(a) de volta, <strong>{{ nomeUsuario }}</strong>!</p>
+  } @else {
+    <p>Por favor, faça login para continuar.</p>
+  }
+  <button (click)="alternarLogin()">Alternar Estado de Login</button>
+</div>
+
+
+<div class="card-ex14">
+  <ul>
+    @for (prod of produtos; track prod.id) {
+      <li>
+        <strong>{{ prod.nome }}</strong> - R$ {{ prod.preco }}
+        @if (prod.disponivel) {
+          <span style="color: green;"> (Em estoque)</span>
+        } @else {
+          <span style="color: red;"> (Esgotado)</span>
+        }
+      </li>
+    }
+  </ul>
+</div>
+
+
+<div class="card-ex14">
+  <ul>
+    @for (tarefa of tarefas; track tarefa.id) {
+      <li>{{ tarefa.titulo }}</li>
+    } @empty {
+      <p style="color: #6c757d; font-style: italic;">Nenhuma tarefa pendente encontrada no momento.</p>
+    }
+  </ul>
+</div>
+
+<div class="card-ex14 diferencas">
+  <ul>
+    <li>
+      <strong>Leitura mais limpa e sem elementos extras:</strong> Não é necessário utilizar blocos <code>&lt;ng-template&gt;</code> para tratar o <em>else</em> nem a diretiva <code>*ngIf</code> como atributo de tags HTML, tornando o código mais legível e nativo da linguagem de templates.
+    </li>
+    <li>
+      <strong>Melhor desempenho e legibilidade no loop:</strong> O uso obrigatório do <code>track</code> garante melhor eficiência na renderização do DOM ao atualizar a lista, e o bloco <code>&#64;empty</code> substitui com facilidade mensagens condicionais de listas vazias sem precisar de um <code>*ngIf="lista.length === 0"</code> adicional.
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,17 @@
+<p>Total de nomes: <strong>{{ nomes.length }}</strong></p>
+
+<div *ngIf="nomes.length > 0; else listaVazia">
+  <ul>
+    <li *ngFor="let nome of nomes; let i = index">
+      {{ i + 1 }} - {{ nome }}
+    </li>
+  </ul>
+</div>
+
+<ng-template #listaVazia>
+  <p style="color: red;">Nenhum nome cadastrado.</p>
+</ng-template>
+
+<button (click)="removerUltimo()" [disabled]="nomes.length === 0">Remover último nome</button>
+<button (click)="limparLista()" [disabled]="nomes.length === 0">Limpar toda a lista</button>
+<button (click)="restaurarLista()">Restaurar lista inicial</button>

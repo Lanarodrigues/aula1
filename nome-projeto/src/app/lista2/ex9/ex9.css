@@ -1,0 +1,28 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 8px;
+  margin-bottom: 6px;
+  border-radius: 4px;
+}
+
+.vermelho {
+  color: #721c24;
+  background-color: #f8d7da;
+  font-weight: bold;
+}
+
+.amarelo {
+  color: #856404;
+  background-color: #fff3cd;
+  font-weight: bold;
+}
+
+.verde {
+  color: #155724;
+  background-color: #d4edda;
+  font-weight: bold;
+}

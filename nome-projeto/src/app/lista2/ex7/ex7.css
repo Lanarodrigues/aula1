@@ -1,0 +1,27 @@
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 300px;
+}
+
+li {
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.par {
+  background-color: #f0f0f0;
+}
+
+.impar {
+  background-color: #d1e7dd;
+}
+
+.primeiro {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.ultimo {
+  border: 2px dashed #dc3545;
+}

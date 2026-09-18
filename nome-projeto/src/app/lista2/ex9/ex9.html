@@ -1,0 +1,13 @@
+<ul>
+  <li *ngFor="let prod of produtos"
+      [ngClass]="{
+        'vermelho': prod.quantidade === 0,
+        'amarelo': prod.quantidade >= 1 && prod.quantidade <= 5,
+        'verde': prod.quantidade > 5
+      }">
+    <strong>{{ prod.nome }}</strong> - Qtd: {{ prod.quantidade }} | Status:
+    <span *ngIf="prod.quantidade === 0">Sem estoque</span>
+    <span *ngIf="prod.quantidade >= 1 && prod.quantidade <= 5">Estoque baixo</span>
+    <span *ngIf="prod.quantidade > 5">Estoque disponível</span>
+  </li>
+</ul>

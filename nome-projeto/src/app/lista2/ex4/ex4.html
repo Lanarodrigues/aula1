@@ -1,0 +1,13 @@
+<p>Produto: <strong>{{ nomeProduto }}</strong></p>
+<p>Quantidade em Estoque: <strong>{{ quantidadeEstoque }}</strong></p>
+
+<p *ngIf="quantidadeEstoque > 0; else semEstoque">
+  Status: <span style="color: green;">Produto disponível</span>
+</p>
+
+<ng-template #semEstoque>
+  <p>Status: <span style="color: red;">Produto sem estoque</span></p>
+</ng-template>
+
+<button (click)="adicionar()">Adicionar unidade</button>
+<button (click)="remover()" [disabled]="quantidadeEstoque === 0">Remover unidade</button>

@@ -1,0 +1,13 @@
+<h3>Exercício 3: Verificação de Idade</h3>
+
+<p>Idade atual: <strong>{{ idade }}</strong></p>
+
+<button (click)="aumentar()">Aumentar idade</button>
+<button (click)="diminuir()" [disabled]="idade === 0">Diminuir idade</button>
+
+<div>
+  <p *ngIf="idade < 12">Classificação: Criança</p>
+  <p *ngIf="idade >= 12 && idade <= 17">Classificação: Adolescente</p>
+  <p *ngIf="idade >= 18 && idade <= 59">Classificação: Adulto</p>
+  <p *ngIf="idade >= 60">Classificação: Idoso</p>
+</div>

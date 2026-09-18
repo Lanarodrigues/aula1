@@ -1,0 +1,25 @@
+<div class="form-cadastro">
+  <div class="campo">
+    <label for="nome">Nome do Produto:</label>
+    <input id="nome" type="text" [(ngModel)]="novoNome" placeholder="Ex: Monitor">
+  </div>
+
+  <div class="campo">
+    <label for="quantidade">Quantidade:</label>
+    <input id="quantidade" type="number" [(ngModel)]="novaQuantidade" placeholder="Ex: 5">
+  </div>
+
+  <button class="btn-cadastrar" (click)="cadastrarProduto()">Cadastrar</button>
+</div>
+
+<div *ngIf="mensagemErro" class="mensagem-erro">
+  {{ mensagemErro }}
+</div>
+
+<h4>Produtos Cadastrados:</h4>
+<ul>
+  <li *ngFor="let prod of produtos; let i = index">
+    <span><strong>{{ prod.nome }}</strong> - Qtd: {{ prod.quantidade }}</span>
+    <button class="btn-excluir" (click)="excluirProduto(i)">Excluir</button>
+  </li>
+</ul>

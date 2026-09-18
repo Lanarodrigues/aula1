@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Ex1 } from './ex1/ex1';
 
 @NgModule({
-  declarations: [Ex1],
+  declarations: [],
   imports: [CommonModule],
-  exports:[Ex1]
+  exports: []
 })
-export class Lista2Module {}
+export class Lista2Module { }
