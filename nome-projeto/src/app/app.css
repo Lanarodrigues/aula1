@@ -1,0 +1,18 @@
+.loja-container {
+  max-width: 900px;
+  margin: 40px auto;
+  border: 3px solid #0099e6;
+  border-radius: 8px;
+  overflow: hidden; 
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.conteudo-cards {
+  background-color: #eaf0f6;
+  padding: 30px;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between;
+  gap: 20px;
+}

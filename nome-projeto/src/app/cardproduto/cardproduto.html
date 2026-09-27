@@ -1,6 +1,8 @@
-<div class="card">
-    <h2>{{nome}}</h2>
-    <p>Preço: R$ {{valor}}</p>
-    <p>disponivel:{{disponivel ? 'Sim' : 'Nâo' }}</p>
+<div class="card" [class.indisponivel]="!disponivel">
+  <h2>{{ nome }}</h2>
+  <p>Preço: R$ {{ valor | number:'1.2-2' }}</p>
+  <p>
+    Disponível: {{ disponivel ? 'Sim' : 'Não' }}
+    <span class="icone">{{ disponivel ? '✅' : '❌' }}</span>
+  </p>
 </div>
-

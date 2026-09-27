@@ -1,11 +1,12 @@
-<app-cardproduto [nome]="produtonome" 
-[valor]="produtovalor"
- [disponivel]="produtodisponivel">
-</app-cardproduto>
+<div class="loja-container">
+  <app-cabecalho></app-cabecalho>
 
-<app-cardproduto
-nome="Mouse Sem fio"
-[valor]="150"
-[disponivel]="true">
-</app-cardproduto>
-
+  <div class="conteudo-cards">
+    <app-cardproduto 
+      *ngFor="let p of produtos"
+      [nome]="p.nome"
+      [valor]="p.valor"
+      [disponivel]="p.disponivel">
+    </app-cardproduto>
+  </div>
+</div>

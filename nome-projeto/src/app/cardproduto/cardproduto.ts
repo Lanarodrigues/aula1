@@ -1,14 +1,15 @@
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  imports: [],
-  standalone: true,
   selector: 'app-cardproduto',
-  styleUrl: './cardproduto.css',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './cardproduto.html',
+  styleUrl: './cardproduto.css'
 })
 export class Cardproduto {
-  @Input() nome : string = 'Teclado mecânico';
-  @Input() preço: number = 250;
-  @Input() disponivel: boolean = true;
+  @Input() nome: string = '';
+  @Input() valor: number = 0;
+  @Input() disponivel: boolean = false;
 }
